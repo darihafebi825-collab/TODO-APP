@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Example</title>
+</head>
+<body>
+
+    <input type="text" id="taskInput" placeholder="Enter your task">
+    <button onclick="getInput()">Add</button>
+
+    <script>
+        function getInput() {
+            const value = document.getElementById("taskInput").value;
+            alert(value);
+        }
+    </script>
+
+</body>
+</html>
