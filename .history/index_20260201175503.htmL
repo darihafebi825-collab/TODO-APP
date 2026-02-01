@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do App</title>
+    <style>
+        li {
+            cursor: pointer;
+            padding: 6px;
+        }
+        .selected {
+            background-color: #e0e0e0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        button {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="taskInput" placeholder="Enter your task"
+           onkeydown="if(event.key==='Enter') addTask()">
+    <button onclick="addTask()">Add</button>
+    <button onclick="deleteTask()">Delete Selected</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        let selectedItem = null;
+
+        function addTask() {
+            const task = document.getElementById("taskInput").value.trim();
+            if (task === "") return;
+
+            const li = document.createElement("li");
+            li.textContent = task;
+
+            li.onclick = function () {
+                if (selectedItem) {
+                    selectedItem.classList.remove("selected");
+                }
+                selectedItem = li;
+                li.classList.add("selected");
+            };
+
+            li.ondblclick = function () {
+                li.classList.toggle("completed");
+            };
+
+            document.getElementById("taskList").appendChild(li);
+            document.getElementById("taskInput").value = "";
+        }
+
+        function deleteTask() {
+            if (selectedItem) {
+                selectedItem.remove();
+                selectedItem = null;
+            } else {
+                alert("Please select a task to delete");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
