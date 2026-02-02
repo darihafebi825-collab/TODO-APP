@@ -1,57 +1,67 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>To-Do App</title>
-    
     <style>
+        /* Page background and font */
         body {
-    background-color: #ffe6f0; /* soft pink background */
-    font-family: Arial, sans-serif;
-}
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0; /* light pink background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
 
-input[type="text"] {
-    border: 2px solid #ff99c8; /* pink border */
-    border-radius: 5px;
-}
+        /* Input and buttons styling */
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 2px solid #ff99c8;
+            border-radius: 5px;
+            outline: none;
+        }
 
-button {
-    background-color: #ff99c8; /* pink buttons */
-    color: white;
-    border-radius: 5px;
-}
+        button {
+            padding: 10px 15px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff99c8;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-button:hover {
-    background-color: #ff66b3; /* darker pink on hover */
-}
+        button:hover {
+            background-color: #ff66b3;
+        }
 
-li {
-    background-color: white; /* task items white */
-    border-radius: 5px;
-}
-
-li.selected {
-    background-color: #ffccdd; /* selected task pink */
-}
-
-li.completed {
-    color: gray; /* completed task */
-    text-decoration: line-through;
-}
+        /* Task list styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 300px;
+        }
 
         li {
             cursor: pointer;
-            padding: 6px;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
         }
-        .selected {
-            background-color: #e0e0e0;
+
+        li.selected {
+            background-color: #ffccdd;
         }
-        .completed {
+
+        li.completed {
             text-decoration: line-through;
             color: gray;
-        }
-        button {
-            margin-left: 8px;
         }
     </style>
 </head>
@@ -102,4 +112,5 @@ li.completed {
 
 </body>
 </html>
+
 
